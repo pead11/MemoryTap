@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block style %} 
+    <link href="/static/leaderboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/index.css">
+    <script defer src="/static/all.js"></script> 
+{% endblock %}
+
+{% block title %}
+    Leaderboard
+{% endblock %}
+
+{% block body %}
+    <div class="crown"><i class="fas fa-crown"></i></div>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in range(10) %}
+                {% if scores[i] %}
+                <tr class='rank{{ scores[i]["rank"] }}'>
+                    <td>{{ scores[i]["rank"] }}</td>
+                    <td><div class="overflow">{{ scores[i]["name"] }}</div></td>
+                    <td>{{ scores[i]["score"] }}</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="page">Page {{ page }}</div>
+    <div class="bar">
+        <a class="restart"
+            {% if page != 1 %} 
+                href="/leaderboard?page={{ page - 1 }}"
+            {% endif %}
+        ><</a>
+        <a class="restart" href="/">Play</a>
+        <a class='restart' href="/search"><i class="fas fa-search"></i></a>
+        <a class="restart"
+            {% if scores|length >= 11 %}
+                href="/leaderboard?page={{ page + 1 }}"
+            {% endif %}
+        >></a>
+    </div>
+{% endblock %}

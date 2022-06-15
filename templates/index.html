@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block style %} 
+    <link href="/static/index.css" rel="stylesheet">
+    <script defer src="/static/all.js"></script>
+    <script src='static\main.js'></script>
+{% endblock %}
+
+{% block title %}
+    
+{% endblock %}
+
+{% block body %}
+    <div class='score' id='score'>
+        0
+    </div>
+    <div id="game_over" class="game_over" style="display: none;">
+        <p style="color: red; font-size: 120%;">GAME OVER :(</p>
+        <p></p>In order to save your score in the leaderboard: Enter your name and click "save"</p>
+        <form action="/leaderboard" method="post">
+            <input autocomplete="on" type="text" name="name" placeholder="Name" maxlength=20 pattern=".{3,20}" required>
+            <input id='hidden_score' type="hidden" name="score">
+            <button class="restart" type="submit"><i class="fas fa-save"></i> Save</button>
+        </form>
+        <button class='restart' id="restart"><i class="fas fa-redo-alt"></i> Restart</button>
+    </div>
+    <div class="lnblck start">
+        <button type='button' id='start' class='startbtn'>
+            <i class="fas fa-play"></i>
+        </button>
+    </div>
+    <div class="square">
+        <div class="grid" id='grid'>
+            {% for i in range(9) %}
+                <button type="button" id="{{ i }}" class="grid_button"></button>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="game_over" class="lnblck">
+    </div>
+    <div class='footer'>
+        <a class="restart" href="/leaderboard"><i class="fas fa-trophy"></i> Leaderboard</a>
+        <a class="restart" href="/how-to-play">How to play <i class="fas fa-lightbulb"></i></a>
+    </div>
+
+{% endblock %}

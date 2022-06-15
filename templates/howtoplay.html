@@ -1,0 +1,35 @@
+{% extends "layout.html"%}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/index.css">
+    <style>
+        * {
+            color: white;
+            margin: 0 3vw;
+            font-size: min(3vh, 6vw);
+        }
+        a {
+            padding: 0.15rem 0.7rem;
+        }
+    </style>
+{% endblock %}
+{% block title %}
+    How to play
+{% endblock %}
+
+{% block body %}
+    <p style="font-size: 400%;">How to play</p>
+    <p style="font-weight: bold;">Remember as many sequences as possible!</p>
+
+    <p>In Memory Tap, you try to memorize a sequence of flashing buttons and then reproduce it afterwards. 
+        To start a round, click the start button at the top of the screen. 
+        Then you will see multiple buttons flash purple in a row. 
+        Afterwards click the buttons in the same order as the sequence you have seen before, 
+        every correctly-clicked button will flash green and the score - which is displayed as a number at the top of the screen - 
+        will increase by one. 
+        Once you complete a round you can click the startbutton to start the next one, the sequence stays the same but there will be one additional button to memorize at the end of sequence. 
+        In the event of an incorrect guess the clicked button will flash red and the game is over. 
+        You still have the opportunity to save your score and appear on the leaderboard otherwise you can restart the game.
+    </p>
+    <a class="restart" href="/">< back</a>
+{% endblock %}

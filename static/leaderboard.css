@@ -1,0 +1,93 @@
+table {
+	color:  white;
+	font-size: min(3vh, 6vw);
+	border-collapse: collapse;
+}
+
+td, th {
+	border: 1px solid white;
+	padding: 0.5rem;
+}
+
+.crown {
+	color: grey;
+	font-size: 5rem;
+	line-height: 100%;
+}
+
+.bar {
+	color: white;
+	display: inline-grid;
+	grid-template-columns: repeat(4, auto);
+	grid-template-rows: auto;
+	text-align: center;
+	font-size: 3.5vh;
+}
+
+.bar .restart {
+	padding: 0.15rem 0.7rem;
+	margin-top: 1vh;
+	margin-left: 1vw;
+	margin-right: 1vw;
+	margin-bottom: 1vh;
+}
+
+.page {
+	color: white;
+	line-height: 100%;
+	padding: 00.25rem 0;
+	font-size: min(2.5vh, 5vw);
+}
+
+.rank1 {
+	color: black;
+	background: linear-gradient(to top left, rgb(226, 192, 0), rgb(255, 220, 24), white);
+	border-color: gold;
+}
+
+.rank2 {
+	background: linear-gradient(to top left, rgb(153, 153, 153), silver, white);
+	color: black;
+}
+
+.rank3 {
+	color: black;
+	background: linear-gradient(to top left, #a87760, #c2927c, white);
+}
+
+td:nth-child(2) {
+	max-width: 50vw;
+}
+
+.overflow {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+
+.top {
+	max-width: 90%;
+	font-size: min(4vh, 6vw);
+	width: 10em;
+	height: 3em;
+	margin-bottom: 2.5vh;
+	margin-top: 2.5vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search {
+	margin-top: 2.5vh;
+	margin-bottom: auto;
+}
+
+.query {
+	size: 200%;
+	font-size: 2em;
+}
+
+.fa-search {
+	vertical-align: middle;
+	padding-bottom: 10%;
+}

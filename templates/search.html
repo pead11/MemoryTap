@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block style %} 
+    <link rel="stylesheet" href="/static/index.css">
+    <script src="/static/search.js"></script>
+    <link href="/static/leaderboard.css" rel="stylesheet">
+    <script defer src="/static/all.js"></script> 
+{% endblock %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block body %}
+    <a class="restart top" href="/leaderboard"><i class="fas fa-trophy"></i> Leaderboard</a>
+    <input id="input" class="query" autocomplete="off" autofocus name="q" placeholder="Search players..." type="text">
+
+    <table class="search">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody id="query">
+        </tbody>
+    </table>
+{% endblock %}

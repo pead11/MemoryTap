@@ -1,0 +1,10 @@
+<link href="/static/leaderboard.css" rel="stylesheet">
+
+{% for score in scores %}
+    <tr class="rank{{ score["rank"] }}">
+        <td>{{ score["rank"] }}</td>
+        <td><div class="overflow">{{ score["name"] }}</div></td>
+        <td>{{ score["score"] }}</td>
+    </tr>
+{% endfor %}
+    
